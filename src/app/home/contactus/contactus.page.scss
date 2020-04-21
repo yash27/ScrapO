@@ -1,0 +1,31 @@
+ion-content {
+
+    .callFabButton {
+        margin-top: 5rem;
+        transform: scale(1.5);
+        animation: callButtonAnimation 3s infinite;
+    }
+
+    .avatarStyle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactIcons {
+        transform: scale(1.5);
+    }
+
+    @keyframes callButtonAnimation {
+        0% {
+            transform: scale(1.5);
+        }
+        50% {
+            transform: scale(1.7);
+        }
+        100% {
+            transform: scale(1.5);
+        }
+    }
+
+}

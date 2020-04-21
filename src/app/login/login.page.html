@@ -1,0 +1,40 @@
+<ion-content *ngIf="toDisplay">
+  <div class="logo">
+    <!-- <div class="logoCenter">
+      <ion-icon name="sync"></ion-icon>
+    </div> -->
+    <lottie-animation-view [options]="lottieConfig" [width]="200" [height]="400"
+      (animCreated)="handleAnimation($event)">
+    </lottie-animation-view>
+  </div>
+
+  <ion-grid style="margin-top: -2vh;">
+    <div style="text-align: center;">
+      <h1 style="font-family: ProximaBold; color: white; font-size: 30px">Scrap Online</h1>
+    </div>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label class="loginLabel" position="floating">Mobile No.</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label class="loginLabel" position="floating">Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col class="ion-text-center" size="12">
+        <ion-button expand="full" shape="round" [routerLink]="['/home']">Submit</ion-button>
+        <p style="color: white;" [routerLink]="['forgot-password']">Forgot Password?</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="signUpContainer">
+    <p class="signUpText" [routerLink]="['register']"><u>New Here? SIGN UP!</u></p>
+    <p>{{responseText | json}}</p>
+  </div>
+</ion-content>

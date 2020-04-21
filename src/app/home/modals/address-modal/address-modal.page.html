@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-icon (click)="modalController.dismiss()" style="margin-left: 5px; zoom: 1.6;" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Add New Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <form [formGroup]="addressForm">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Full Name</ion-label>
+              <ion-input formControlName="name" type="text"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="addressForm.controls.name.touched && !addressForm.controls.name.valid" class="warningLabel" color="danger">Enter Proper Name</ion-label>
+            <ion-item>
+              <ion-label position="floating">Mobile No.</ion-label>
+              <ion-input formControlName="mobile" type="number"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="addressForm.controls.mobile.touched && !addressForm.controls.mobile.valid" class="warningLabel" color="danger">Enter Proper Mobile No.</ion-label>
+            <ion-item>
+              <ion-label position="floating">Pincode</ion-label>
+              <ion-input formControlName="pincode" type="number"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="addressForm.controls.pincode.touched && !addressForm.controls.pincode.valid" class="warningLabel" color="danger">Enter Proper Pincode</ion-label>
+            <ion-item>
+              <ion-label position="floating">Flat No. / House No.</ion-label>
+              <ion-input formControlName="flatNoHouseNo" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Floor / Building</ion-label>
+              <ion-input formControlName="floorBuilding" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Street / Colony</ion-label>
+              <ion-input formControlName="streetColony" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Locality</ion-label>
+              <ion-input formControlName="locality" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Landmark</ion-label>
+              <ion-input formControlName="landmark" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">City</ion-label>
+              <ion-input formControlName="city" type="text"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="addressForm.controls.city.touched && !addressForm.controls.city.valid" class="warningLabel" color="danger">Enter Proper City</ion-label>
+          </ion-list>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="success" shape="round" expand="full" [disabled]="!addressForm.valid" (click)="onSubmit()">Save</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

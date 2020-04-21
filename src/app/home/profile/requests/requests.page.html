@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-icon [routerLink]="['/home/profile']" style="margin-left: 5px; zoom: 1.6;" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Requests</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="md" color="success">
+    <ion-segment mode="ios" (ionChange)="segmentChanged()" [(ngModel)]="segment" mode="ios" value="pending">
+      <ion-segment-button value="0">
+        <ion-icon id="pendingIcon" name="ellipsis-horizontal-circle-sharp"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        <ion-icon id="completedIcon" name="checkmark-circle"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        <ion-icon id="cancelledIcon" name="close-circle"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="false">
+
+    <ion-slide>
+      <ion-list mode="ios">
+        <ion-list-header>
+          Pending Requests
+        </ion-list-header>
+        <br>
+        <ion-item *ngFor="let list of data.pending" (click)="openAlert(list, 'Pending')">
+          <ion-label>Order No. {{list}}</ion-label>
+          <ion-note slot="end" color="warning">Pending</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-list mode="ios">
+        <ion-list-header>
+          Completed Requests
+        </ion-list-header>
+        <br>
+        <ion-item *ngFor="let list of data.completed" (click)="openAlert(list, 'Completed')">
+          <ion-label>Order No. {{list}}</ion-label>
+          <ion-note slot="end" color="success">Completed</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-list mode="ios">
+        <ion-list-header>
+          Cancelled Requests
+        </ion-list-header>
+        <br>
+        <ion-item *ngFor="let list of data.cancelled" (click)="openAlert(list, 'Cancelled')">
+          <ion-label>Order No. {{list}}</ion-label>
+          <ion-note slot="end" color="danger">Cancelled</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>

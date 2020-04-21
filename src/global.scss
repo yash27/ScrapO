@@ -24,3 +24,39 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: 'ProximaRegular';
+    src: url('assets/fonts/regular.ttf');
+}
+  
+@font-face {
+    font-family: 'ProximaBold';
+    src: url('assets/fonts/bold.otf');
+}
+
+:root,
+:root[mode="md"],
+:root[mode="ios"] {
+    --ion-font-family: 'ProximaRegular';
+    font-family: 'ProximaRegular';
+
+    button.pendingClass {
+        color: #ffc409 !important;
+        position: absolute;
+        left: 10px;
+    }
+    button.completedClass {
+        color: #2dd36f !important;
+        position: absolute;
+        left: 10px;
+    }
+    button.cancelledClass {
+        color: #ee445a !important;
+        position: absolute;
+        left: 10px;
+    }
+    button.deleteAddressAlertBtn {
+        color: #ee445a !important;
+    }
+}

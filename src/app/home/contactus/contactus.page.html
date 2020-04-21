@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-icon [routerLink]="['/home']" style="margin-left: 5px; zoom: 1.6;" name="home"></ion-icon>
+    </ion-buttons>
+    <ion-title>Contact Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" style="text-align: center;">
+        <h2>Give Us A Call.</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="top" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="onCall()" class="callFabButton" color="success">
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid style="margin-top: 6rem;">
+    <ion-row>
+      <ion-col size="12" style="text-align: center;">
+        <h2>OR</h2>
+        <h2>You Can Also Contact VIA</h2>
+        
+        <ion-list style="margin-top: 3rem;">
+
+          <ion-item lines="none">
+            <ion-avatar class="avatarStyle" slot="start">
+              <ion-icon style="color: #075e54;" class="contactIcons" name="logo-whatsapp"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              <h1 style="color: #075e54;">Whatsapp</h1>
+            </ion-label>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-avatar class="avatarStyle" slot="start">
+              <ion-icon style="color: #B23121;" class="contactIcons" name="logo-google"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              <h1 style="color: #B23121;">GMail</h1>
+            </ion-label>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-avatar class="avatarStyle" slot="start">
+              <ion-icon style="color: #038bff;" class="contactIcons" name="earth"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              <h1 style="color: #038bff;">Website</h1>
+            </ion-label>
+          </ion-item>
+
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid style="margin-top: 10vh; width: 100%;">
+    <ion-row>
+      <ion-col size="12" style="text-align: center;">
+        <h5><b>www.onlinescrap.com</b></h5>
+        <h5>Contact: <b>+91-7756911355</b></h5>
+        <h5>Context: <b>Online Scrap</b></h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

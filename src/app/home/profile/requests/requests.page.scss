@@ -1,0 +1,30 @@
+ion-header {
+
+    ion-segment-button {
+        transition: 1s;
+    }
+
+    .segment-button-checked {
+        ion-icon {
+            transform: scale(1.5);            
+            transition: 1s;
+        }
+        #pendingIcon {
+            color: #ffc409;
+        }
+        #cancelledIcon {
+            color: #ee445a;
+        }
+    }
+}
+
+ion-content {
+    ion-slide {
+        height: calc(100vh - 140px) !important;
+        display: initial;
+    }
+}
+
+button.my-alert {
+    color: red !important;
+}

@@ -1,0 +1,49 @@
+ion-content {
+    --background: linear-gradient(180deg, #2ecc71, #289c59, #1a743f);
+
+    .logo {
+        text-align: center;
+        margin-top: -100px;
+
+        img {
+            background-color: #2ecc71;
+        }
+    }
+
+    ion-item {
+        --background: transparent;
+        --border-color: white;
+        --color: white;
+        --highlight-color-focused: yellow;
+    }
+
+    ion-button {
+        --background: white;
+        --color: green;
+    }
+
+    ion-item.item-has-focus > ion-label{
+        color: yellow !important;
+    }
+
+    .signUpContainer {
+        text-align: center;
+        margin-top: 5rem;
+        .signUpText {
+            color: white;
+            font-size: large;
+            background: transparent;
+        }
+    }
+
+}
+
+
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-icon [routerLink]="['/home']" name="home" style="margin-left: 5px; zoom: 1.6;"></ion-icon>
+    </ion-buttons>
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="6">
+
+        <ion-card style="text-align: center;" (click)="onSelectItem('Newspapers')">
+          <h2>Newspaper</h2>
+          <img src="assets/images/newspaper.png" />
+          <ion-card-header>
+            <ion-card-title>Rate: <b>&#x20b9; 10</b>/kg </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+
+      </ion-col>
+
+      <ion-col size="6">
+
+        <ion-card style="text-align: center;" (click)="onSelectItem('Books')">
+          <h2>Books</h2>
+          <img style="transform: scale(1.2);" src="assets/images/books.png" />
+          <ion-card-header>
+            <ion-card-title>Rate: <b>&#x20b9; 20</b>/kg </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="items.length > 0">
+  <ion-row>
+    <ion-col size="12">
+      <ion-button (click)="onSubmit()" [routerLink]="['submission']" color="success" expand="full" shape="round">Proceed</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,8 @@
+{
+  "appId": "com.scrapo.scraponline",
+  "appName": "Online Scrap",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

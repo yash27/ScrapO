@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Your Receipt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding tableRow">
+    <ion-row style="border-bottom: 1px #34495e solid;">
+      <ion-col class="tableCol" size="6">
+        <h5 style="font-weight: bold;">Items</h5>
+      </ion-col>
+      <ion-col class="tableCol" size="2">
+        <h5 style="font-weight: bold;">Rate</h5>
+      </ion-col>
+      <ion-col class="tableCol" size="2">
+        <h5 style="font-weight: bold;">KG</h5>
+      </ion-col>
+      <ion-col style="padding-left: 1rem;" size="2">
+        <h5 style="font-weight: bold;">Total</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="tableCol" size="6">
+        <h5>Newspaper</h5>
+      </ion-col>
+      <ion-col class="tableCol" size="2">
+        <h5>&#x20b9; 10</h5>
+      </ion-col>
+      <ion-col class="tableCol" size="2">
+        <h5>1</h5>
+      </ion-col>
+      <ion-col style="padding-left: 1rem;" size="2">
+        <h5>&#x20b9; 10</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="tableCol" size="6">
+        <h5>Books</h5>
+      </ion-col>
+      <ion-col class="tableCol" size="2">
+        <h5>&#x20b9; 20</h5>
+      </ion-col>
+      <ion-col class="tableCol" size="2">
+        <h5>1</h5>
+      </ion-col>
+      <ion-col style="padding-left: 1rem;" size="2">
+        <h5>&#x20b9; 20</h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <ion-grid class="ion-no-padding">
+    <ion-row style="border-bottom: 1px #34495e solid; border-top: 1px #34495e solid;">
+      <ion-col class="tableCol" size="10">
+        <h5 style="font-weight: bold;">All Total</h5>
+      </ion-col>
+      <ion-col class="tableCol" size="2">
+        <h5 style="font-weight: bold; color: #2dd36f">&#x20b9; 30</h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="remainingDiv">
+    <h3 style="font-weight: bold;">THANK YOU</h3>
+  </div>
+  <div style="position: absolute; bottom: 0; text-align: center;">
+    <h5 style="font-size: 12px; margin-left: 2rem;">
+      <b>*NOTE:</b> Pickup Time Morning 9 upto Evening 6 (9AM - 6PM)
+    </h5>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button shape="round" expand="full" color="success" [routerLink]="['/home']">Done</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

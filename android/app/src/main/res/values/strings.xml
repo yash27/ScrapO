@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Online Scrap</string>
+    <string name="title_activity_main">Online Scrap</string>
+    <string name="package_name">com.scrapo.scraponline</string>
+    <string name="custom_url_scheme">com.scrapo.scraponline</string>
+</resources>

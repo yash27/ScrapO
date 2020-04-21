@@ -1,0 +1,24 @@
+ion-content {
+    .noAddress {
+        height: 80vh;
+        text-align: center;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .addressAvatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #2dd36f;
+        color: white;
+
+        ion-icon {
+            zoom: 1.2;
+        }
+    }
+}

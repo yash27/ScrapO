@@ -1,0 +1,39 @@
+ion-content {
+    --background: #b2bec3;
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #loadingText {
+        position: absolute !important;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-family: ProximaBold;
+    }
+    #loadingText {
+        position: absolute !important;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-family: ProximaBold;
+        color: rgba(0, 0, 0, .3);
+        font-size: 5em;
+    }
+    #loadingText:before {
+        content: attr(data-text);
+        position: absolute;
+        overflow: hidden;
+        max-width: 7em;
+        white-space: nowrap;
+        color: #fff;
+        animation: loading 8s linear;
+    }
+    @keyframes loading {
+        0% {
+            max-width: 0;
+        }
+    }
+}

@@ -1,5 +1,8 @@
 {
-  "name": "onlineScrap",
-  "integrations": {},
+  "name": "Online Scrap",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

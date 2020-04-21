@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-icon [routerLink]="['/home']" name="home" style="margin-left: 5px; zoom: 1.6;"></ion-icon>
+    </ion-buttons>
+    <ion-title>Your Selection</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let item of items">
+    <ion-list-header mode="ios">
+      {{item}}
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Quantity: <b>1</b> </ion-label>
+      <ion-note style="zoom: 1.5;" slot="end" color="success"><b>&#x20b9; {{item === 'Newspapers' ? 10 : 20}}</b></ion-note>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="success" expand="full" shape="round" [routerLink]="['receipt']">Proceed</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
