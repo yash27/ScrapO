@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Admin Login</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon class="downIcon" name="chevron-down" mode="ios" (click)="modalController.dismiss()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form">
+    <form #adminForm="ngForm">
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" shape="round" color="success">Submit</ion-button>
+</ion-footer>

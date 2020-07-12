@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="success" mode="ios">
+    <ion-buttons slot="start">
+      <ion-icon (click)="modalController.dismiss()" name="home" style="margin-left: 5px; zoom: 1.6;"></ion-icon>
+    </ion-buttons>
+    <ion-title mode="ios">Donate Your Clothes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="margin-top: 3rem;">
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Clothes For</ion-label>
+          <ion-select interface="action-sheet" placeholder="Select Gender">
+            <ion-select-option>Male</ion-select-option>
+            <ion-select-option>Female</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>Size Of Cloth</ion-label>
+          <ion-select multiple="true" placeholder="Select Size">
+            <ion-select-option>XS</ion-select-option>
+            <ion-select-option>S</ion-select-option>
+            <ion-select-option>M</ion-select-option>
+            <ion-select-option>L</ion-select-option>
+            <ion-select-option>XL</ion-select-option>
+            <ion-select-option>XXL</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>Quantity of Clothes</ion-label>
+          <ion-input style="text-align: end;" type="number" placeholder="Enter quantity"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br><br>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8" offset="2">
+        <ion-button (click)="donate()" mode="ios" expand="full" shape="round" fill="outline" color="success">DONATE</ion-button>
+      </ion-col>
+      <ion-col size="12" style="text-align: center; margin-top: 1rem;">
+        <ion-text>
+          Donate your clothes for <b>Anath Ashram</b> and for <b>Poor Childrens</b>.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br><br>
+  <img src="assets/svgs/gift.svg">
+</ion-content>

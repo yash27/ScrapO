@@ -1,0 +1,4 @@
+1. Register you app in Firebase and set up all platforms. Android and iOS.
+2. For Android, make sure you have SHA key based on the type of your APK (Debug or Release).
+3. After setting up Android and iOS platforms, also add Web App as an Platform (to get idToken and serverAuthToken).
+4. For iOS add a variable after adding 

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule
+    RegisterPageRoutingModule,
+    LottieAnimationViewModule.forRoot()
   ],
   declarations: [RegisterPage]
 })

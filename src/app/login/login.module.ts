@@ -9,6 +9,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 
 import { LottieAnimationViewModule } from 'ng-lottie';
+import { AdminLoginPageModule } from './admin-login/admin-login.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { LottieAnimationViewModule } from 'ng-lottie';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
+    AdminLoginPageModule,
     LottieAnimationViewModule.forRoot()
   ],
   declarations: [LoginPage]

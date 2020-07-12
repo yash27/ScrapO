@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { SplashPage } from './splash/splash.page';
 import { HttpService } from '../services/http.service';
+import { GlobalService } from '../services/global.service';
+import { AdminLoginPage } from './admin-login/admin-login.page';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,11 @@ export class LoginPage implements OnInit {
   public lottieConfig: Object;
   private anim: any;
 
-  constructor(private modalController: ModalController, private http: HttpService) {
+  constructor(
+    private modalController: ModalController, 
+    private http: HttpService,
+    private global: GlobalService
+    ) {
     this.lottieConfig = {
       path: 'assets/anim5.json',
       renderer: 'canvas',
@@ -33,24 +38,18 @@ export class LoginPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    const data = { username: '123456789', password: 'admin@123' };
-    // this.http.postCall('/token/', data).subscribe((response: any) => this.responseText = response, error => this.responseText = error);
+    // this.global.showAlert('Hello', 'success', 'Just woke up');
   }
 
-  showLoading() {
+  openAdmin() {
     this.modalController.create(
       {
-        component: SplashPage,
-        backdropDismiss: false,
-        swipeToClose: false,
+        component: AdminLoginPage,
+        cssClass: 'adminModal',
+        showBackdrop: true,
+        backdropDismiss: true
       }
-    ).then(modal => {
-      modal.present();
-      setTimeout(() => modal.dismiss(), 3000);
-    });
-    setTimeout(() => {
-      this.toDisplay = true;
-    }, 3000);
+    ).then(modal => modal.present());
   }
 
 }

@@ -10,14 +10,27 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AddressModalPageModule } from './home/modals/address-modal/address-modal.module';
-import { SplashPageModule } from './login/splash/splash.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HTTPInterceptor } from './services/http.interceptor';
+import { DonatePageModule } from './home/modals/donate/donate.module';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore'
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AddressModalPageModule, SplashPageModule, HttpClientModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule, 
+    AddressModalPageModule, 
+    DonatePageModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+  ],
   providers: [
     StatusBar,
     CallNumber,

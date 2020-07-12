@@ -38,6 +38,14 @@ ion-content {
 
 }
 
+.admin {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    transform: scale(2);
+    color: white;
+}
+
 
 @keyframes rotating {
     from{

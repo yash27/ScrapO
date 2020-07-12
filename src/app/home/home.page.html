@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-icon (click)="onDonate()" name="shirt" style="margin-left: 2px; zoom: 2;"></ion-icon>
+    </ion-buttons>
     <ion-buttons slot="end">
       <ion-icon [routerLink]="['profile']" name="person-circle-sharp" style="margin-right: 5px; zoom: 2;"></ion-icon>
     </ion-buttons>
-    <ion-title>Dashboard</ion-title>
+    <ion-title>Donate</ion-title>
   </ion-toolbar>
 </ion-header>
 

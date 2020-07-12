@@ -1,8 +1,5 @@
 <ion-content *ngIf="toDisplay">
   <div class="logo">
-    <!-- <div class="logoCenter">
-      <ion-icon name="sync"></ion-icon>
-    </div> -->
     <lottie-animation-view [options]="lottieConfig" [width]="200" [height]="400"
       (animCreated)="handleAnimation($event)">
     </lottie-animation-view>
@@ -15,8 +12,8 @@
     <ion-row>
       <ion-col size="12">
         <ion-item>
-          <ion-label class="loginLabel" position="floating">Mobile No.</ion-label>
-          <ion-input type="number"></ion-input>
+          <ion-label class="loginLabel" position="floating">Username</ion-label>
+          <ion-input type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label class="loginLabel" position="floating">Password</ion-label>
@@ -37,4 +34,5 @@
     <p class="signUpText" [routerLink]="['register']"><u>New Here? SIGN UP!</u></p>
     <p>{{responseText | json}}</p>
   </div>
+  <ion-icon (click)="openAdmin()" class="admin" name="person-circle"></ion-icon>
 </ion-content>
