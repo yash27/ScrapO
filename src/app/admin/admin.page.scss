@@ -1,0 +1,30 @@
+ion-content {
+    ion-list {
+        ion-item {
+            ion-avatar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ion-icon {
+                    color: #2dd36f;
+                    transform: scale(3);
+                }
+            }
+        }
+        .itemIcons {
+            transform: scale(1.3);
+        }
+    }
+
+    .pendingStatus {
+        color: #e4c931;
+    }
+
+    .onTrackStatus {
+        color: #02dbff;
+    }
+
+    .completedStatus {
+        color: #2dd36f;
+    }
+}

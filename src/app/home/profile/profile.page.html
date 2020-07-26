@@ -4,7 +4,7 @@
       <ion-icon [routerLink]="['/home']" style="margin-left: 5px; zoom: 1.6;" name="home"></ion-icon>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-icon [routerLink]="['/login']" name="log-out-outline" style="margin-right: 5px; zoom: 1.6;"></ion-icon>
+      <ion-icon (click)="onLogout()" name="log-out-outline" style="margin-right: 5px; zoom: 1.6;"></ion-icon>
     </ion-buttons>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
@@ -18,14 +18,14 @@
         <div class="profilePic">
           <ion-icon name="person"></ion-icon>
         </div>
-        <h2 style="font-family: ProximaBold;">Alex John </h2>
-        <h4 style="color: #0051ff; margin-top: 0;"> <b>+91-7712377123</b> </h4>
-        <h4 style="color: #31e005; margin-top: 0;"> <u>alexjohn@gmail.com</u></h4>
+        <h2 style="font-family: ProximaBold;">{{global.fetchedUser.firstName}} {{global.fetchedUser.lastName}}</h2>
+        <h4 style="color: #0051ff; margin-top: 0;"> <b>+91-{{global.fetchedUser.mobile}}</b> </h4>
+        <h4 style="color: #31e005; margin-top: 0;"> <u>{{global.fetchedUser.email}}</u></h4>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <ion-grid style="margin-top: 5rem;">
+  <ion-grid [hidden]="true" style="margin-top: 5rem;">
     <ion-row>
       <ion-col size="6">
         <div class="optionBox" [routerLink]="['requests']">

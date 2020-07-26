@@ -1,7 +1,8 @@
 <ion-header>
   <ion-toolbar color="success">
     <ion-buttons slot="start">
-      <ion-icon [routerLink]="['/home']" name="home" style="margin-left: 5px; zoom: 1.6;"></ion-icon>
+      <ion-icon *ngIf="!isFillingAddress" [routerLink]="['/home']" name="home" style="margin-left: 5px; zoom: 1.6;">
+      </ion-icon>
     </ion-buttons>
     <ion-title>Your Selection</ion-title>
   </ion-toolbar>
@@ -15,7 +16,33 @@
     </ion-list-header>
     <ion-item>
       <ion-label>Quantity: <b>1</b> </ion-label>
-      <ion-note style="zoom: 1.5;" slot="end" color="success"><b>&#x20b9; {{item === 'Newspapers' ? 10 : 20}}</b></ion-note>
+      <ion-note style="zoom: 1.5;" slot="end" color="success"><b>&#x20b9; {{item === 'Newspapers' ? 10 : 20}}</b>
+      </ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="isAddressFilled">
+    <ion-list-header mode="ios">
+      Address
+    </ion-list-header>
+    <br>
+    <ion-item>
+      <ion-text position="floating">
+        <h5>Address Line 1</h5>
+        <p>{{finalSubmitObj.address1}}</p>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text position="floating">
+        <h5>Address Line 2</h5>
+        <p>{{finalSubmitObj.address2}}</p>
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-text position="floating">
+        <h5>Pincode</h5>
+        <p>{{finalSubmitObj.pincode}}</p>
+      </ion-text>
     </ion-item>
   </ion-list>
 
@@ -23,8 +50,11 @@
 
 <ion-footer>
   <ion-row>
-    <ion-col size="12">
-      <ion-button color="success" expand="full" shape="round" [routerLink]="['receipt']">Proceed</ion-button>
+    <ion-col size="6">
+      <ion-button color="secondary" expand="full" shape="round" (click)="onAddAddress()">Address</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button color="success" expand="full" shape="round" (click)="onCreateOrder()">Proceed</ion-button>
     </ion-col>
   </ion-row>
 </ion-footer>

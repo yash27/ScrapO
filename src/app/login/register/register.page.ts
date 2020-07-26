@@ -34,6 +34,7 @@ export class RegisterPage implements OnInit {
         loader.dismiss();
         this.global.showAlert('User added successfully', 'success' ,'Now login with the registered credentials.');
         this.router.navigate(['/login']);
+        this.userDetails = {};
       }).catch(error => {
         loader.dismiss();
         this.global.showAlert('Some problem occurred while adding user', 'error', 'Please try after some time');

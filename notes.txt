@@ -1,4 +1,27 @@
 1. Register you app in Firebase and set up all platforms. Android and iOS.
-2. For Android, make sure you have SHA key based on the type of your APK (Debug or Release).
-3. After setting up Android and iOS platforms, also add Web App as an Platform (to get idToken and serverAuthToken).
-4. For iOS add a variable after adding 
+2. For setting Android platform, make sure you have SHA key based on the type of your APK (Debug or Release).
+To print SHA key of your apk, type "keytool -printcert -jarfile path-of-your-apk.apk" in console.
+3. After setting up Android and iOS platforms, also set up Web App as an Platform (to get idToken and serverAuthToken).
+4. For iOS (IMPORTANT) add a variable after adding google-plus plugin in the last of package.json.
+"cordova": {
+    "plugins": {
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "<app id from manifest>"
+      }
+    }
+  }
+5. For Android, no variable is required but make sure to check SHA key.
+6. After that, add google plus packages specific to cordova or capacitor.
+(For capacitor, make sure to do ionic cap sync after adding package)
+7. After adding package, add google plus dependency in module.
+8. In the component, use following code
+this.googlePlus.login(
+    {
+        webClientId: '<webClientID>',
+        offline: true,
+        scopes: 'profile email'
+    }
+)
+9. You will get web client id in Google Console API site, there because of registering Firebase app.
+Client IDs will automatically get created in Google API Console.
+10. Same web client id will be used in back end servers to get the idToken authorized from backend.

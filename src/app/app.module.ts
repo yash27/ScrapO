@@ -17,6 +17,8 @@ import { DonatePageModule } from './home/modals/donate/donate.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AddressFillingPageModule } from './home/category/submission/address-filling/address-filling.module';
+import { OrderDetailsPageModule } from './admin/order-details/order-details.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +29,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore'
     AppRoutingModule, 
     AddressModalPageModule, 
     DonatePageModule,
+    AddressFillingPageModule,
+    OrderDetailsPageModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule

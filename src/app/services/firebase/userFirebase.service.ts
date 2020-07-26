@@ -30,7 +30,7 @@ export class UserFirebaseService {
         return this.userCollection.doc<User>(id).valueChanges();
     }
 
-    upadteTodo(user, id) {
+    upadteUser(user, id) {
         return this.userCollection.doc(id).update(user);
     }
 
@@ -38,13 +38,15 @@ export class UserFirebaseService {
         return this.userCollection.add(user);
     }
 
-    removeTodo(id) {
+    removeUser(id) {
         return this.userCollection.doc(id).delete();
     }
 
 }
 
 export interface User {
+    firstName: string,
+    lastName: string,
     username: string,
     mobile: string,
     email: string,
