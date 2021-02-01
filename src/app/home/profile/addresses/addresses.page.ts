@@ -11,7 +11,7 @@ export class AddressesPage implements OnInit {
 
   addresses: Array<any> = [];
 
-  constructor(private modalController: ModalController, private alertController: AlertController) { }
+  constructor(public modalController: ModalController, private alertController: AlertController) { }
 
   ngOnInit() {
   }

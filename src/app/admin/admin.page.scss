@@ -21,10 +21,14 @@ ion-content {
     }
 
     .onTrackStatus {
-        color: #02dbff;
+        color: #18b4cf;
     }
 
     .completedStatus {
-        color: #2dd36f;
+        color: #2db162;
+    }
+
+    .cancelledStatus {
+        color: tomato;
     }
 }

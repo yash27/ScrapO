@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar mode="ios" color="success">
+    <ion-title>User Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-padding">
+        <ion-item>
+          <ion-text>
+            <p>First Name</p>
+            <h5>{{userDetails.firstName}}</h5>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            <p>Last Name</p>
+            <h5>{{userDetails.lastName}}</h5>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            <p>Username</p>
+            <h5>{{userDetails.username}}</h5>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            <p>Mobile</p>
+            <h5>{{userDetails.mobile}}</h5>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            <p>Email</p>
+            <h5>{{userDetails.email}}</h5>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            <p>Password</p>
+            <h5>{{userDetails.password}}</h5>
+          </ion-text>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" color="success" (click)="modalController.dismiss()">Back</ion-button>
+</ion-footer>

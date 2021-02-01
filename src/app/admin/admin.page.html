@@ -27,10 +27,10 @@
         </div>
         <ion-list *ngIf="ordersList.length > 0" class="ion-no-padding">
           <ion-list-header mode="ios">
-            Users List
+            Orders List
           </ion-list-header>
           <!-- Sliding item with text options on both sides -->
-          <ion-item-sliding *ngFor="let order of ordersList index as i">
+          <ion-item-sliding *ngFor="let order of ordersFilteredList index as i">
             <ion-item>
               <ion-avatar slot="start">
                 <ion-icon name="list-circle"></ion-icon>
@@ -45,7 +45,7 @@
               </ion-label>
             </ion-item>
             <ion-item-options side="end">
-              <ion-item-option color="secondary" (click)="viewOrder(order, i)">
+              <ion-item-option color="secondary" (click)="viewOrder(order)">
                 <ion-icon class="itemIcons" name="eye"></ion-icon>&nbsp;View
               </ion-item-option>
             </ion-item-options>
@@ -56,6 +56,7 @@
   </ion-grid>
 </ion-content>
 <ion-content *ngIf="selectedSegment === 'users'">
+  <ion-searchbar *ngIf="usersList.length > 0" (ionClear)="applyFilter('')" (keyup)="applyFilter($event.target.value)"></ion-searchbar>
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col size="12" class="ion-no-padding">
@@ -67,7 +68,7 @@
             Users List
           </ion-list-header>
           <!-- Sliding item with text options on both sides -->
-          <ion-item-sliding *ngFor="let user of usersList; index as i">
+          <ion-item-sliding *ngFor="let user of userFilteredList; index as i">
             <ion-item-options side="start">
               <ion-item-option color="danger" (click)="deleteUser(user, i)">
                 <ion-icon class="itemIcons" name="close-circle"></ion-icon>&nbsp;Delete
@@ -87,6 +88,9 @@
               <ion-item-option color="success" (click)="callUser(user.mobile)">
                 <ion-icon class="itemIcons" name="call"></ion-icon>&nbsp;Call
               </ion-item-option>
+              <ion-item-option color="secondary" (click)="viewUser(user)">
+                <ion-icon class="itemIcons" name="eye"></ion-icon>&nbsp;View
+              </ion-item-option>
             </ion-item-options>
           </ion-item-sliding>
         </ion-list>
@@ -94,3 +98,20 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer *ngIf="selectedSegment === 'orders'">
+  <ion-row style="background: #388bff;">
+    <ion-col size="12">
+      <ion-item color="primary">
+        <ion-label position="floating">Filter Orders</ion-label>
+        <ion-select [(ngModel)]="filtereingTerm" interface="action-sheet" (ionChange)="onFilterTermChanged()">
+          <ion-select-option value="ALL">ALL</ion-select-option>
+          <ion-select-option value="PENDING">PENDING ORDERS</ion-select-option>
+          <ion-select-option value="ON TRACK">ON TRACK ORDERS</ion-select-option>
+          <ion-select-option value="COMPLETED">COMPLETED ORDERS</ion-select-option>
+          <ion-select-option value="CANCELLED">CANCELLED ORDERS</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-footer>

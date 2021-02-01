@@ -19,6 +19,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { AddressFillingPageModule } from './home/category/submission/address-filling/address-filling.module';
 import { OrderDetailsPageModule } from './admin/order-details/order-details.module';
+import { UserDetailsPageModule } from './admin/user-details/user-details.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { OrderDetailsPageModule } from './admin/order-details/order-details.modu
     DonatePageModule,
     AddressFillingPageModule,
     OrderDetailsPageModule,
+    UserDetailsPageModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule

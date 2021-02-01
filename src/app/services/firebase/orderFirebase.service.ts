@@ -30,12 +30,12 @@ export class OrderFirebaseService {
         return this.orderCollection.doc<Order>(id).valueChanges();
     }
 
-    upadteOrder(user, id) {
-        return this.orderCollection.doc(id).update(user);
+    upadteOrder(order, id) {
+        return this.orderCollection.doc(id).update(order);
     }
 
-    addOrder(user) {
-        return this.orderCollection.add(user);
+    addOrder(order) {
+        return this.orderCollection.add(order);
     }
 
     removeOrder(id) {

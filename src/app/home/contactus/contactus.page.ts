@@ -9,13 +9,14 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 })
 export class ContactusPage implements OnInit {
 
-  constructor(private callNumber: CallNumber) { }
+  constructor(
+    private callNumber: CallNumber) { }
 
   ngOnInit() {
   }
 
   onCall() {
-    this.callNumber.callNumber('7756911355', true)
+    this.callNumber.callNumber('8805924984', true)
     .then( response => console.log(response))
     .catch( error => console.log(error));
   }

@@ -17,7 +17,7 @@
           <h2>Newspaper</h2>
           <img src="assets/images/newspaper.png" />
           <ion-card-header>
-            <ion-card-title>Rate: <b>&#x20b9; 10</b>/kg </ion-card-title>
+            <ion-card-title>Rate: <b>&#x20b9; 8</b>/kg </ion-card-title>
           </ion-card-header>
         </ion-card>
 
@@ -29,8 +29,36 @@
           <h2>Books</h2>
           <img style="transform: scale(1.2);" src="assets/images/books.png" />
           <ion-card-header>
-            <ion-card-title>Rate: <b>&#x20b9; 20</b>/kg </ion-card-title>
+            <ion-card-title>Rate: <b>&#x20b9; 6</b>/kg </ion-card-title>
           </ion-card-header>
+        </ion-card>
+
+      </ion-col>
+
+    </ion-row>
+    <p style="text-align: center;">Items Coming Soon For Orders</p>
+    <ion-row>
+
+      <ion-col size="6">
+
+        <ion-card style="text-align: center;" (click)="displayToast('Item will be available soon.', 'warning')">
+          <h2>E-Waste</h2>
+          <img src="assets/images/eWaste.png" />
+          <!-- <ion-card-header>
+            <ion-card-title>Rate: <b>&#x20b9; 10</b>/kg </ion-card-title>
+          </ion-card-header> -->
+        </ion-card>
+
+      </ion-col>
+
+      <ion-col size="6">
+
+        <ion-card style="text-align: center;" (click)="displayToast('Item will be available soon.', 'warning')">
+          <h2>Plastic Waste</h2>
+          <img src="assets/images/plasticWaste.png" />
+          <!-- <ion-card-header>
+            <ion-card-title>Rate: <b>&#x20b9; 20</b>/kg </ion-card-title>
+          </ion-card-header> -->
         </ion-card>
 
       </ion-col>

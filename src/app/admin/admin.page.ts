@@ -6,6 +6,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { OrderFirebaseService } from '../services/firebase/orderFirebase.service';
 import { OrderDetailsPage } from './order-details/order-details.page';
+import { UserDetailsPage } from './user-details/user-details.page';
 
 @Component({
   selector: 'app-admin',
@@ -14,10 +15,14 @@ import { OrderDetailsPage } from './order-details/order-details.page';
 })
 export class AdminPage implements OnInit {
 
-  selectedSegment: any = 'users';
+  selectedSegment: any = 'orders';
 
   usersList: any = [];
+  userFilteredList: any = [];
   ordersList: any = [];
+  ordersFilteredList: any = [];
+
+  filtereingTerm: any = 'ALL';
 
   constructor(
     private userService: UserFirebaseService,
@@ -59,14 +64,26 @@ export class AdminPage implements OnInit {
   loadUsers() {
     this.userService.getUsers().subscribe(response => {
       this.usersList = response;
+      this.userFilteredList = this.usersList;
     }, error => {
       this.global.showToastMessage('Unable to fetch users list.');
+    });
+  }
+
+  applyFilter(filteredValue) {
+    this.userFilteredList = [];
+    filteredValue = filteredValue.toLowerCase();
+    this.usersList.filter((v) => {
+      if(((v.firstName).toLowerCase()).includes(filteredValue) || ((v.lastName).toLowerCase()).includes(filteredValue) || ((v.username).toLowerCase()).includes(filteredValue) || ((v.email).toLowerCase()).includes(filteredValue) || ((v.username).toLowerCase()).includes(filteredValue)) {
+        this.userFilteredList.push(v);
+      }
     });
   }
 
   loadOrders() {
     this.orderService.getOrders().subscribe(order => {
       this.ordersList = order;
+      this.ordersFilteredList = this.ordersList;
     }), error => {
       this.global.showToastMessage('Unable to fetch orders list');
     }
@@ -101,7 +118,7 @@ export class AdminPage implements OnInit {
     ).then(alert => alert.present());
   }
 
-  viewOrder(order, index) {
+  viewOrder(order) {
     this.modalController.create(
       {
         component: OrderDetailsPage,
@@ -113,6 +130,35 @@ export class AdminPage implements OnInit {
       modal.present();
       
     });
+  }
+
+  viewUser(user) {
+    this.modalController.create(
+      {
+        component: UserDetailsPage,
+        componentProps: {
+          data: user
+        }
+      }
+    ).then(modal => {
+      modal.present();
+      
+    });
+  }
+
+  onFilterTermChanged() {
+    this.ordersFilteredList = [];
+    let filterTerm = this.filtereingTerm;
+    if(this.filtereingTerm === 'ALL') {
+      this.ordersFilteredList = this.ordersList;
+    } else {
+      this.ordersList.filter((v) => {
+        if(filterTerm === v.status) {
+          this.ordersFilteredList.push(v);
+        }
+      });
+    }
+    
   }
 
 }

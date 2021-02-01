@@ -13,6 +13,8 @@ export class GlobalService {
 
     fetchedUser: any = {};
 
+    supportMobileNumber: any;
+
     constructor(
         private toastController: ToastController,
         private router: Router

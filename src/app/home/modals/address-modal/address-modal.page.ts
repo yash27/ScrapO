@@ -21,7 +21,7 @@ export class AddressModalPage implements OnInit {
     city: new FormControl('', [Validators.maxLength(20), Validators.minLength(3), Validators.pattern('[a-zA-Z ]*'), Validators.required])
   });
 
-  constructor(private modalController: ModalController) { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
   }

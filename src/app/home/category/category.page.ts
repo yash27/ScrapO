@@ -10,7 +10,9 @@ export class CategoryPage {
 
   items: Array<any> = [];
 
-  constructor(private toastController: ToastController) { }
+  constructor(
+    private toastController: ToastController,
+    ) { }
 
   onSelectItem(item) {
     if (this.items.includes(item)) {
